@@ -291,24 +291,171 @@
     
     
         <article class="index-post">
-            <a class="abstract-title" href = "/2017/02/01/08/" >
+            <a class="abstract-title" href = "/2016/12/12/06/" >
                 
-                    <span>BOM</span>
+                    <span>JS事件</span>
             </a>
             <div class="abstract-content">
-                BOM对象window对象
-BOM的核心是window，它表示浏览器的一个实例。window 对象既是通过 js 访问浏览器窗口的一个接口，又是 es 规定的Global 对象。
-全局变量不能通过 delete 操作符删除，但是 window 对象上的属性是可以的。
-直接访问为未声明的变量会报错，但是可以通过 window对象上的属性来查询某个未声明的变量是否存在。
+                冒泡和捕获阶段
 
-12var newValue = oldValue  //会抛出错误，因为后者未声明var newValue = window.oldValue  // undefined
-间歇调用和超时调用
-JS 是单线程语言，但它允许...
+一图流解释：IE 事件流叫做事件冒泡，从元素逐级向上传递，所有现代浏览器支持事件冒泡。
+事件捕获是网景团队提出，虽然规范要求应该从 document 对象开始，但浏览器基本都从 window 对象开始。特殊需求才会使用。
+
+目标阶段
+需要注意的是，你以为点击蚊子，事件目标节点在div上，其实实际触发会在最深的节点，比如 p 或者 span 等子节点上。
+
+DOM 事件流
+DOM2级事件规定的事件流包括三个阶段：事件捕获，目标事件阶段和事件冒泡阶段。
+规范要求：捕获阶段不触发目标元素事件，然后目标事件处理，再进行冒泡阶段。
+然而多数浏览器在捕获阶段也实现了目标元素事件，导...
             </div>
             <div class="abstract-post-meta">
                 <!-- date  -->
                 <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/02/01</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2016/12/12</span>
+                </div>
+                <!-- tags  -->
+                
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="abstract-title" href = "/2016/11/20/05/" >
+                
+                    <span>JSON格式详解</span>
+            </a>
+            <div class="abstract-content">
+                JSON是一种数据格式，又是 JS 的一个严格的子集，但并不从属于JavaScript.
+语法
+简单值：字符串、数值、布尔值、null.不支持 js 中的特殊值 undefined。
+对象：一种复杂数据类型，无序键值对儿。其中的值可以为简单值，也可以是复杂数据类型值。
+数组，一种复杂数据类型，有序的值的列表，可以通过数值索引访问，数组的值也可以是任意类型。
+
+简单值
+js 字符串与 JSON 字符串最大的不同，在于 JSON 字符串必须为双引号，单引号可能导致语法错误。
+布尔值和 null 也是有效的 JSON 格式，但通常是会用复杂的数据结构表示 JSON 对象。
+
+对象
+js 对象字...
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2016/11/20</span>
+                </div>
+                <!-- tags  -->
+                
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="abstract-title" href = "/2016/10/02/04/" >
+                
+                    <span>JavaScript创建对象和实现继承</span>
+            </a>
+            <div class="abstract-content">
+                JavaScript创建对象构造函数模式创建对象function Person(name, job) {
+    this.name = name
+    this.job = job
+    this.sayName = function() {
+        console.log(this.name)
+    }
+}
+var person1 = new Person(‘Jiang’, ‘student’)
+var person2 = new Person(‘X’, ‘Doctor’)
+没有显示的创建对象，使用new来调用这个构造函数，使用new后会自动执行如下操作
+创建一个新对象...
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2016/10/02</span>
+                </div>
+                <!-- tags  -->
+                
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="abstract-title" href = "/2016/09/15/03/" >
+                
+                    <span>引用类型</span>
+            </a>
+            <div class="abstract-content">
+                在 ECMAScript 中，引用类型是一种数据结构，用于将数据和功能组织在一起。它也常被称作类。有时候也被成为对象定义，因为他们描述的是一类对象所具有的属性和方法。如前所述，对象是某个特定引用类型的实例。
+object 类型
+一般来说，访问对象属性有点表示法和方括号两种方法。
+
+12alert(person['name']) //'James'alert(person.name)    //'James'
+这两种方式访问对象属性没有任何区别，但方括号可以通过变量访问属性；如果属性明中国年包含空格等可能导致语法错误的字符，或者属性名使用的是关键字或保留字，也可以使用方括号正确表达。
+Ar...
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2016/09/15</span>
+                </div>
+                <!-- tags  -->
+                
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="abstract-title" href = "/2016/08/05/02/" >
+                
+                    <span>伪类、伪元素使用说明</span>
+            </a>
+            <div class="abstract-content">
+                伪类、伪元素配合CSS3可以完成非常多有意思的效果，为方便个人开发时候的快速查阅，记录了以下常用到的一些伪类伪元素的简要中文说明；
+简单区分：
+:Pseudo-classes        伪类:DOM在不同状态、不同位置下的特殊效果；
+::Pseudo-elements    伪元素：DOM按匹配规则伪造出的元素；
+注意点：
+伪类添加的内容元素或伪类效果通在DOM的源代码中是看不见的，需要借助开发者工具才能看见;
+使用屏幕阅读器等设备无法访问和读取伪元素生成的内容。因此不应该使用伪元素来添加正文内容等重要信息到页面上展示，应确保主体内容的完整性。
+伪类添加的元素也可以使用CSS样式进行...
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2016/08/05</span>
+                </div>
+                <!-- tags  -->
+                
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="abstract-title" href = "/2016/06/30/01/" >
+                
+                    <span>Git 简单使用说明</span>
+            </a>
+            <div class="abstract-content">
+                1、安装git：
+git是Windows版的Git，从git下载,然后按默认选项安装即可。
+安装完成后，在开始菜单里找到“Git”-&gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！
+2、配置用户名：
+git config --global user.name &quot;Your Name&quot;
+git config --global user.email &quot;email@example.com&quot;
+3、创建仓库（或者 克隆一个远程仓库 ）：
+git init
+
+Initialized empty Git repository in...
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2016/06/30</span>
                 </div>
                 <!-- tags  -->
                 

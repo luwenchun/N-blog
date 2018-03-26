@@ -291,24 +291,28 @@
     
     
         <article class="index-post">
-            <a class="abstract-title" href = "/2017/02/01/08/" >
+            <a class="abstract-title" href = "/2016/12/12/06/" >
                 
-                    <span>BOM</span>
+                    <span>JS事件</span>
             </a>
             <div class="abstract-content">
-                BOM对象window对象
-BOM的核心是window，它表示浏览器的一个实例。window 对象既是通过 js 访问浏览器窗口的一个接口，又是 es 规定的Global 对象。
-全局变量不能通过 delete 操作符删除，但是 window 对象上的属性是可以的。
-直接访问为未声明的变量会报错，但是可以通过 window对象上的属性来查询某个未声明的变量是否存在。
+                冒泡和捕获阶段
 
-12var newValue = oldValue  //会抛出错误，因为后者未声明var newValue = window.oldValue  // undefined
-间歇调用和超时调用
-JS 是单线程语言，但它允许...
+一图流解释：IE 事件流叫做事件冒泡，从元素逐级向上传递，所有现代浏览器支持事件冒泡。
+事件捕获是网景团队提出，虽然规范要求应该从 document 对象开始，但浏览器基本都从 window 对象开始。特殊需求才会使用。
+
+目标阶段
+需要注意的是，你以为点击蚊子，事件目标节点在div上，其实实际触发会在最深的节点，比如 p 或者 span 等子节点上。
+
+DOM 事件流
+DOM2级事件规定的事件流包括三个阶段：事件捕获，目标事件阶段和事件冒泡阶段。
+规范要求：捕获阶段不触发目标元素事件，然后目标事件处理，再进行冒泡阶段。
+然而多数浏览器在捕获阶段也实现了目标元素事件，导...
             </div>
             <div class="abstract-post-meta">
                 <!-- date  -->
                 <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/02/01</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2016/12/12</span>
                 </div>
                 <!-- tags  -->
                 

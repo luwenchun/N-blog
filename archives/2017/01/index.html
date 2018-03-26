@@ -291,24 +291,27 @@
     
     
         <article class="index-post">
-            <a class="abstract-title" href = "/2017/02/01/08/" >
+            <a class="abstract-title" href = "/2017/01/20/07/" >
                 
-                    <span>BOM</span>
+                    <span>DOM</span>
             </a>
             <div class="abstract-content">
-                BOM对象window对象
-BOM的核心是window，它表示浏览器的一个实例。window 对象既是通过 js 访问浏览器窗口的一个接口，又是 es 规定的Global 对象。
-全局变量不能通过 delete 操作符删除，但是 window 对象上的属性是可以的。
-直接访问为未声明的变量会报错，但是可以通过 window对象上的属性来查询某个未声明的变量是否存在。
+                DOM对象节点层次
+文档节点 document 是每个文档的根节点。文档节点只有一个子节点，即 &lt;html&gt; 元素,称之为文档元素。在 HTML 中，文档元素始终是&lt;html&gt;元素。
+HTML 元素通过元素节点表示，特性通过特性节点表示，文档类型通过文档类型节点表示，注释则通过注释节点表示。总共有12种节点类型，这些类型都继承于一个基类型。
 
-12var newValue = oldValue  //会抛出错误，因为后者未声明var newValue = window.oldValue  // undefined
-间歇调用和超时调用
-JS 是单线程语言，但它允许...
+Node 类型
+每个节点都有一个 nodeType 属性，用于表明节点类型。12个数值常量表示，任何节点类型必居其一。例如：
+
+
+Node.ELEMENT_NODE(1)
+Node.ATTRIBUTE_NODE(2)
+Nod...
             </div>
             <div class="abstract-post-meta">
                 <!-- date  -->
                 <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/02/01</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/01/20</span>
                 </div>
                 <!-- tags  -->
                 

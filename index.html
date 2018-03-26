@@ -304,21 +304,42 @@
     
     
         <article class="index-post">
-            <a class="abstract-title" href = "/2018/02/27/node/" >
+            <a class="abstract-title" href = "/2018/03/26/mongodb使用方法/" >
                 
-                    <span>node</span>
+                    <span>mongodb常用操作指令</span>
             </a>
             <div class="abstract-content">
-                Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post"
-More info: Writing
-Run server1$ hexo server
-More...
+                1.创建简单mongodb服务器
+mongod --dbpath E:\MongoDB\db
+
+mongo.exe
+
+
+2.数据库操作(CRUD)
+显示数据库名称：show dbs
+
+切换数据库：use &lt;dbname&gt;
+
+删除当前数据库：db.dropDatabase()
+
+想要新建数据库，直接使用use &lt;dbname&gt;,在需要的时候会自动创建
+
+新建表db.&lt;表名&gt;.insert({});数据以json的格式
+
+显示表名 ：show collections
+
+
+
+例子
+
+&gt; use exapmledb
+
+&gt; db.ex_collect...
             </div>
             <div class="abstract-post-meta">
                 <!-- date  -->
                 <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/27</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/26</span>
                 </div>
                 <!-- tags  -->
                 
@@ -328,16 +349,218 @@ More...
     
     
         <article class="index-post">
-            <a class="abstract-title" href = "/2017/02/01/Hello World/" >
+            <a class="abstract-title" href = "/2017/09/21/BFC/" >
                 
-                    <span>Hello World</span>
+                    <span>BFC</span>
             </a>
             <div class="abstract-content">
-                Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post"
-More info: Writing
-Run server1$ hexo server
-More...
+                什么是BFCBFC全称是Block Formatting Context，即块格式化上下文。它是CSS2.1规范定义的，关于CSS渲染定位的一个概念。要明白BFC到底是什么，首先来看看什么是视觉格式化模型。
+视觉格式化模型视觉格式化模型定义了盒（Box）的生成，盒主要包括了块盒、行内盒、匿名盒（没有名字不能被选择器选中的盒）以及一些实验性的盒（未来可能添加到规范中）。盒的类型由display属性决定。
+块盒（block box）块盒有以下特性：
+1、当元素的CSS属性display为block，list-item或 table时，它是块级元素 block-level；
+2、视觉上呈现为块...
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/09/21</span>
+                </div>
+                <!-- tags  -->
+                
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="abstract-title" href = "/2017/08/29/14/" >
+                
+                    <span>iconfont图片使用技巧</span>
+            </a>
+            <div class="abstract-content">
+                font-class引用
+font-class是unicode使用方式的一种变种，主要是解决unicode书写不直观，语意不明确的问题。
+与unicode使用方式相比，具有如下特点：
+1.兼容性良好，支持ie8+，及所有现代浏览器。2.相比于unicode语意明确，书写更直观。可以很容易分辨这个icon是什么。3.因为使用class来定义图标，所以当要替换图标时，只需要修改class里面的unicode引用。4.不过因为本质上还是使用的字体，所以多色图标还是不支持的。使用步骤如下：
+第一步：引入项目下面生成的fontclass代码：1&lt;link rel="stylesheet" t...
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/08/29</span>
+                </div>
+                <!-- tags  -->
+                
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="abstract-title" href = "/2017/07/27/13/" >
+                
+                    <span>标签样式重置</span>
+            </a>
+            <div class="abstract-content">
+                美化input框/*在IE10+浏览器中, 使用css即可隐藏input文本输入框右侧的叉号*/
+input[type=text]::-ms-clear,::-ms-reveal{display:none;}
+input::-ms-clear,::-ms-reveal{display:none;}
+input{
+    /*去除点击出现轮廓颜色*/
+    outline: none;
+    -webkit-appearance: none; /*去除系统默认的样式，苹果手机上的阴影*/
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)...
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/07/27</span>
+                </div>
+                <!-- tags  -->
+                
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="abstract-title" href = "/2017/06/20/12/" >
+                
+                    <span>Linux 基础命令</span>
+            </a>
+            <div class="abstract-content">
+                目录操作创建目录 mkdir &lt;目录名称&gt;
+删除目录 rm &lt;目录名称&gt;
+定位目录 cd &lt;目录名称&gt;
+查看目录文件 ls ll
+修改目录名 mv &lt;目录名称&gt; &lt;新目录名称&gt;
+拷贝目录 cp &lt;目录名称&gt; &lt;新目录名称&gt;
+文件操作创建文件 touch &lt;文件名称&gt; vi &lt;文件名称&gt;
+删除文件 rm &lt;文件名称&gt;
+修改文件名 mv &lt;文件名称&gt; &lt;新文件名称&gt;
+拷贝文件 cp &lt;文件名称&gt; &lt;新文件名称&gt;
+文件内容操作
+...
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/06/20</span>
+                </div>
+                <!-- tags  -->
+                
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="abstract-title" href = "/2017/05/13/11/" >
+                
+                    <span>Ajax</span>
+            </a>
+            <div class="abstract-content">
+                XMLHttpRequestvar xhr = new XMLHttpRequest()
+xhr.onreadystatechange = function () {
+    // 这里的函数异步执行，可参考之前 JS 基础中的异步模块
+    if (xhr.readyState == 4) {
+        if (xhr.status == 200) {
+            alert(xhr.responseText)
+        }
+    }
+}
+xhr.open(&quot;GET&quot;, &quot;/api&quot;, false)
+xhr.send(...
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/05/13</span>
+                </div>
+                <!-- tags  -->
+                
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="abstract-title" href = "/2017/04/05/10/" >
+                
+                    <span>前端自动化构建环境的搭建</span>
+            </a>
+            <div class="abstract-content">
+                Web前端使用工程化方式构建；
+   目前需要一些简单的功能：
+1. 版本控制
+6. 编译SASS
+2. 检查JS
+3. 图片合并
+4. 压缩CSS
+5. 压缩JS
+这些都是每个Web项目在构建、开发阶段需要做的事情。前端自动化构建环境可以把这些重复工作一次配置，多次重复执行，极大的提高开发效率。
+目前最知名的构建工具： Gulp、Grunt、NPM + Webpack；
+grunt是前端工程化的先驱
+
+gulp更自然基于流的方式连接任务
+
+Webpack最年轻，擅长用于依赖管理，配置稍较复杂
+
+推荐使用Gulp，Gulp基于nodejs中stream，效率更好语法更自然,不需要编写复杂...
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/04/05</span>
+                </div>
+                <!-- tags  -->
+                
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="abstract-title" href = "/2017/03/23/09/" >
+                
+                    <span>CSS3 动画</span>
+            </a>
+            <div class="abstract-content">
+                 CSS3 可以实现动画，代替原来的 Flash 和 JavaScript 方案。
+首先，使用@keyframes定义一个动画，名称为testAnimation，如下代码，通过百分比来设置不同的 CSS 样式，规定动画的变化。所有的动画变化都可以这么定义出来。
+@keyframes testAnimation
+{
+0%   {background: red; left:0; top:0;}
+25%  {background: yellow; left:200px; top:0;}
+50%  {background: blue; left:200px; top:200px;}
+75%  {...
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/03/23</span>
+                </div>
+                <!-- tags  -->
+                
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="abstract-title" href = "/2017/02/01/08/" >
+                
+                    <span>BOM</span>
+            </a>
+            <div class="abstract-content">
+                BOM对象window对象
+BOM的核心是window，它表示浏览器的一个实例。window 对象既是通过 js 访问浏览器窗口的一个接口，又是 es 规定的Global 对象。
+全局变量不能通过 delete 操作符删除，但是 window 对象上的属性是可以的。
+直接访问为未声明的变量会报错，但是可以通过 window对象上的属性来查询某个未声明的变量是否存在。
+
+12var newValue = oldValue  //会抛出错误，因为后者未声明var newValue = window.oldValue  // undefined
+间歇调用和超时调用
+JS 是单线程语言，但它允许...
             </div>
             <div class="abstract-post-meta">
                 <!-- date  -->
@@ -349,7 +572,41 @@ More...
             </div>
         </article>
     
+    
+    
+        <article class="index-post">
+            <a class="abstract-title" href = "/2017/01/20/07/" >
+                
+                    <span>DOM</span>
+            </a>
+            <div class="abstract-content">
+                DOM对象节点层次
+文档节点 document 是每个文档的根节点。文档节点只有一个子节点，即 &lt;html&gt; 元素,称之为文档元素。在 HTML 中，文档元素始终是&lt;html&gt;元素。
+HTML 元素通过元素节点表示，特性通过特性节点表示，文档类型通过文档类型节点表示，注释则通过注释节点表示。总共有12种节点类型，这些类型都继承于一个基类型。
+
+Node 类型
+每个节点都有一个 nodeType 属性，用于表明节点类型。12个数值常量表示，任何节点类型必居其一。例如：
+
+
+Node.ELEMENT_NODE(1)
+Node.ATTRIBUTE_NODE(2)
+Nod...
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/01/20</span>
+                </div>
+                <!-- tags  -->
+                
+            </div>
+        </article>
+    
     <!-- paginator  -->
+    
+    <nav class="page-nav">
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">NEXT &#62;</a>
+    </nav>
     
 </main>
             <!-- profile -->
@@ -359,7 +616,7 @@ More...
     <div class="profile-name">bigdeal</div>
     
     <div class="profile-signature">
-        witness me
+        现寻求一份前端工作
     </div>
     
     
@@ -419,11 +676,11 @@ More...
             <div>FRIENDS</div>
             
                 <span>
-                    <a href= //www.baidu.com target="_black">friendA</a>
+                    <a href= //luwenchun.github.io/-Component-Library-Website/#/zh-CN target="_black">公司组件库</a>
                 </span>
             
                 <span>
-                    <a href= //www.google.com target="_black">friendB</a>
+                    <a href= //github.com/luwenchun/familydoctor target="_black">北京家庭医生</a>
                 </span>
             
         </div>
@@ -438,7 +695,7 @@ More...
         </div>
         <footer class="footer footer-unloaded">
     <!-- social  -->
-    
+    <!-- 
     <div class="social">
         
     
@@ -489,7 +746,8 @@ More...
     
 
     </div>
-    
+     -->
+    <div class="social">黑白中间还有灰，爱恨中间还有泪，你我之间还有谁？</div>
     <!-- powered by Hexo  -->
     <div class="copyright">
         <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
@@ -533,19 +791,193 @@ More...
     
     
     
-    <div class="total-archive"> Total : 2 </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-archive"> Total : 16 </div>
     
     <div class="post-archive">
     
     
     
     
-    <div class="archive-year"> Invalid date </div>
+    <div class="archive-year"> 2018 </div>
     <ul class="year-list">
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2018/02/27/node/" >node</a>
+            <span class="archive-post-date">03/26</span><a class="archive-post-title" href= "/2018/03/26/mongodb使用方法/" >mongodb常用操作指令</a>
         </li>
     
     
@@ -559,7 +991,122 @@ More...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/01</span><a class="archive-post-title" href= "/2017/02/01/Hello World/" >Hello World</a>
+            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/BFC/" >BFC</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/27</span><a class="archive-post-title" href= "/2017/07/27/13/" >标签样式重置</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/20</span><a class="archive-post-title" href= "/2017/06/20/12/" >Linux 基础命令</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/13</span><a class="archive-post-title" href= "/2017/05/13/11/" >Ajax</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/23</span><a class="archive-post-title" href= "/2017/03/23/09/" >CSS3 动画</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/01</span><a class="archive-post-title" href= "/2017/02/01/08/" >BOM</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/20</span><a class="archive-post-title" href= "/2017/01/20/07/" >DOM</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2016/06/30/01/" >Git 简单使用说明</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2017/08/29/14/" >iconfont图片使用技巧</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2016 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2016/12/12/06/" >JS事件</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/20</span><a class="archive-post-title" href= "/2016/11/20/05/" >JSON格式详解</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/02</span><a class="archive-post-title" href= "/2016/10/02/04/" >JavaScript创建对象和实现继承</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/15</span><a class="archive-post-title" href= "/2016/09/15/03/" >引用类型</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2017/04/05/10/" >前端自动化构建环境的搭建</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2016 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/05</span><a class="archive-post-title" href= "/2016/08/05/02/" >伪类、伪元素使用说明</a>
         </li>
     
     </div>

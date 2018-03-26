@@ -9,7 +9,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
-    <title>bigdeal&#39;s Studio</title>
+    <title>标签样式重置 · bigdeal&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -252,6 +252,8 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
@@ -259,64 +261,178 @@
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
     
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >bigdeal&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">标签样式重置</a>
+            </div>
+    </div>
+    
     <a class="home-link" href=/>bigdeal's Studio.</a>
 </header>
     <div class="wrapper">
         <div class="site-intro">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-placeholder"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
+            标签样式重置
+            <!-- 404 -->
+            
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <!-- 文章页标签  -->
+            
+            <script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "2", "bdMiniList": false, "bdPic": "", "bdStyle": "1", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = "/static/api/js/share.js"];</script>
+            <div class="post-intro-meta">
+                <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                <span class="post-intro-time">2017/07/27</span>
+                
+                <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                    <span class="iconfont-archer">&#xe604;</span>
+                    <span id="busuanzi_value_page_pv"></span>
+                </span>
+                
+                <span class="shareWrapper">
+                    <span class="iconfont-archer shareIcon">
+                        &#xe601;
+                    </span>
+                    <span class="bdsharebuttonbox">
+                        <a href="#" class="bds_more shareText" data-cmd="more">Share</a>
+                    </span>
+                </span>
+            </div>
         
     </div>
 </div>
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
 
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2017/02/01/08/" >
-                
-                    <span>BOM</span>
-            </a>
-            <div class="abstract-content">
-                BOM对象window对象
-BOM的核心是window，它表示浏览器的一个实例。window 对象既是通过 js 访问浏览器窗口的一个接口，又是 es 规定的Global 对象。
-全局变量不能通过 delete 操作符删除，但是 window 对象上的属性是可以的。
-直接访问为未声明的变量会报错，但是可以通过 window对象上的属性来查询某个未声明的变量是否存在。
+            <main class="main post-page">
+    <article class="article-entry">
+        <h3 id="美化input框"><a href="#美化input框" class="headerlink" title="美化input框"></a>美化input框</h3><pre><code>/*在IE10+浏览器中, 使用css即可隐藏input文本输入框右侧的叉号*/
+input[type=text]::-ms-clear,::-ms-reveal{display:none;}
+input::-ms-clear,::-ms-reveal{display:none;}
+input{
+    /*去除点击出现轮廓颜色*/
+    outline: none;
+    -webkit-appearance: none; /*去除系统默认的样式，苹果手机上的阴影*/
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /*点击高亮的颜色*/
+    /*padding已在重置样式中去除，如果没有去除，记得有padding哦*/    
+}
+</code></pre><h3 id="美化textarea文本域"><a href="#美化textarea文本域" class="headerlink" title="美化textarea文本域"></a>美化textarea文本域</h3><pre><code>textarea{
+    /*别忘了文本域的box-sizing属性值是border-box;所有的边框和padding都是在你固定的宽高的基础上绘制*/
+    /*去除点击出现轮廓颜色*/
+    outline: none;    
+    /*如果有需要，去掉右下角的可拉伸变大小的图标和功能*/
+    resize: none;
+    /*padding已在重置样式中去除，如果没有去除，记得有padding哦*/
+}
+</code></pre><h3 id="改变placeholder的字体颜色大小"><a href="#改变placeholder的字体颜色大小" class="headerlink" title="改变placeholder的字体颜色大小"></a>改变placeholder的字体颜色大小</h3><pre><code>input::-webkit-input-placeholder { 
+    /* WebKit browsers */ 
+    font-size:14px;
+    color: #333;
+} 
+input:-moz-placeholder { 
+    /* Mozilla Firefox 4 to 18 */ 
+    font-size:14px;
+    color: #333;
+} 
+input::-moz-placeholder { 
+    /* Mozilla Firefox 19+ */ 
+    font-size:14px;
+    color: #333;
+} 
+input:-ms-input-placeholder { 
+    /* Internet Explorer 10+ */ 
+    font-size:14px;
+    color: #333;
+}
+</code></pre><h3 id="美化select"><a href="#美化select" class="headerlink" title="美化select"></a>美化select</h3><pre><code>/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+select::-ms-expand { display: none; }
+select {
+/*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+border: solid 1px #333;
 
-12var newValue = oldValue  //会抛出错误，因为后者未声明var newValue = window.oldValue  // undefined
-间歇调用和超时调用
-JS 是单线程语言，但它允许...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/02/01</span>
-                </div>
-                <!-- tags  -->
-                
-            </div>
-        </article>
+/*将默认的select选择框样式清除*/
+appearance:none;
+-moz-appearance:none;
+-webkit-appearance:none;
+
+/*在选择框的最右侧中间显示小箭头图片*/
+background: url(&quot;小箭头图片路径&quot;) no-repeat right center transparent;
+
+/*为下拉小箭头留出一点位置，避免被文字覆盖*/
+padding-right: 14px;
+
+/*去除点击出现轮廓颜色*/
+outline: none;
+}
+</code></pre><h3 id="美化button按钮"><a href="#美化button按钮" class="headerlink" title="美化button按钮"></a>美化button按钮</h3><pre><code>button{
+    /*本身有2px的边框，一般的button都不需要边框*/
+    border: none;
+    /*本身有的背景色，可以用其他颜色取代*/
+    background: #333;
+    /*padding已在重置样式中去除，如果没有去除，记得有padding哦*/
+}
+</code></pre><h3 id="css中设置table中的td内容自动换行，边框线合并为一条"><a href="#css中设置table中的td内容自动换行，边框线合并为一条" class="headerlink" title="css中设置table中的td内容自动换行，边框线合并为一条"></a>css中设置table中的td内容自动换行，边框线合并为一条</h3><pre><code>1. 把表格的sytle的table-layout: fixed;
+(就是表格固定宽度，就是表格既要自适应他外面的容器，也不要撑出去)
+2. 然后设置td的word-wrap: break-word;
+3. table边框线合并为一条：border-collapse: collapse;
+</code></pre>
+    </article>
+    <!-- 前后页  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2017/08/29/14/" title= iconfont图片使用技巧 >
+                    <div class="nextTitle">iconfont图片使用技巧</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2017/06/20/12/" title= Linux 基础命令 >
+                    <div class="prevTitle">Linux 基础命令</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
-    <!-- paginator  -->
     
+    <!--PC版-->
+
+    <!--PC版-->
+
+
+    
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -390,6 +506,13 @@ JS 是单线程语言，但它允许...
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper">
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#美化input框"><span class="toc-number">1.</span> <span class="toc-text">美化input框</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#美化textarea文本域"><span class="toc-number">2.</span> <span class="toc-text">美化textarea文本域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#改变placeholder的字体颜色大小"><span class="toc-number">3.</span> <span class="toc-text">改变placeholder的字体颜色大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#美化select"><span class="toc-number">4.</span> <span class="toc-text">美化select</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#美化button按钮"><span class="toc-number">5.</span> <span class="toc-text">美化button按钮</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#css中设置table中的td内容自动换行，边框线合并为一条"><span class="toc-number">6.</span> <span class="toc-text">css中设置table中的td内容自动换行，边框线合并为一条</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">

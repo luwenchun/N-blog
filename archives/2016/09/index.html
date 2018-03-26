@@ -291,24 +291,23 @@
     
     
         <article class="index-post">
-            <a class="abstract-title" href = "/2017/02/01/08/" >
+            <a class="abstract-title" href = "/2016/09/15/03/" >
                 
-                    <span>BOM</span>
+                    <span>引用类型</span>
             </a>
             <div class="abstract-content">
-                BOM对象window对象
-BOM的核心是window，它表示浏览器的一个实例。window 对象既是通过 js 访问浏览器窗口的一个接口，又是 es 规定的Global 对象。
-全局变量不能通过 delete 操作符删除，但是 window 对象上的属性是可以的。
-直接访问为未声明的变量会报错，但是可以通过 window对象上的属性来查询某个未声明的变量是否存在。
+                在 ECMAScript 中，引用类型是一种数据结构，用于将数据和功能组织在一起。它也常被称作类。有时候也被成为对象定义，因为他们描述的是一类对象所具有的属性和方法。如前所述，对象是某个特定引用类型的实例。
+object 类型
+一般来说，访问对象属性有点表示法和方括号两种方法。
 
-12var newValue = oldValue  //会抛出错误，因为后者未声明var newValue = window.oldValue  // undefined
-间歇调用和超时调用
-JS 是单线程语言，但它允许...
+12alert(person['name']) //'James'alert(person.name)    //'James'
+这两种方式访问对象属性没有任何区别，但方括号可以通过变量访问属性；如果属性明中国年包含空格等可能导致语法错误的字符，或者属性名使用的是关键字或保留字，也可以使用方括号正确表达。
+Ar...
             </div>
             <div class="abstract-post-meta">
                 <!-- date  -->
                 <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/02/01</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2016/09/15</span>
                 </div>
                 <!-- tags  -->
                 

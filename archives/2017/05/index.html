@@ -291,24 +291,27 @@
     
     
         <article class="index-post">
-            <a class="abstract-title" href = "/2017/02/01/08/" >
+            <a class="abstract-title" href = "/2017/05/13/11/" >
                 
-                    <span>BOM</span>
+                    <span>Ajax</span>
             </a>
             <div class="abstract-content">
-                BOM对象window对象
-BOM的核心是window，它表示浏览器的一个实例。window 对象既是通过 js 访问浏览器窗口的一个接口，又是 es 规定的Global 对象。
-全局变量不能通过 delete 操作符删除，但是 window 对象上的属性是可以的。
-直接访问为未声明的变量会报错，但是可以通过 window对象上的属性来查询某个未声明的变量是否存在。
-
-12var newValue = oldValue  //会抛出错误，因为后者未声明var newValue = window.oldValue  // undefined
-间歇调用和超时调用
-JS 是单线程语言，但它允许...
+                XMLHttpRequestvar xhr = new XMLHttpRequest()
+xhr.onreadystatechange = function () {
+    // 这里的函数异步执行，可参考之前 JS 基础中的异步模块
+    if (xhr.readyState == 4) {
+        if (xhr.status == 200) {
+            alert(xhr.responseText)
+        }
+    }
+}
+xhr.open(&quot;GET&quot;, &quot;/api&quot;, false)
+xhr.send(...
             </div>
             <div class="abstract-post-meta">
                 <!-- date  -->
                 <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/02/01</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/05/13</span>
                 </div>
                 <!-- tags  -->
                 

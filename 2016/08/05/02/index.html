@@ -9,7 +9,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
-    <title>bigdeal&#39;s Studio</title>
+    <title>伪类、伪元素使用说明 · bigdeal&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -252,6 +252,8 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
@@ -259,64 +261,178 @@
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
     
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >bigdeal&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">伪类、伪元素使用说明</a>
+            </div>
+    </div>
+    
     <a class="home-link" href=/>bigdeal's Studio.</a>
 </header>
     <div class="wrapper">
         <div class="site-intro">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-placeholder"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
+            伪类、伪元素使用说明
+            <!-- 404 -->
+            
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <!-- 文章页标签  -->
+            
+            <script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "2", "bdMiniList": false, "bdPic": "", "bdStyle": "1", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = "/static/api/js/share.js"];</script>
+            <div class="post-intro-meta">
+                <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                <span class="post-intro-time">2016/08/05</span>
+                
+                <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                    <span class="iconfont-archer">&#xe604;</span>
+                    <span id="busuanzi_value_page_pv"></span>
+                </span>
+                
+                <span class="shareWrapper">
+                    <span class="iconfont-archer shareIcon">
+                        &#xe601;
+                    </span>
+                    <span class="bdsharebuttonbox">
+                        <a href="#" class="bds_more shareText" data-cmd="more">Share</a>
+                    </span>
+                </span>
+            </div>
         
     </div>
 </div>
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
 
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2017/02/01/08/" >
-                
-                    <span>BOM</span>
-            </a>
-            <div class="abstract-content">
-                BOM对象window对象
-BOM的核心是window，它表示浏览器的一个实例。window 对象既是通过 js 访问浏览器窗口的一个接口，又是 es 规定的Global 对象。
-全局变量不能通过 delete 操作符删除，但是 window 对象上的属性是可以的。
-直接访问为未声明的变量会报错，但是可以通过 window对象上的属性来查询某个未声明的变量是否存在。
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>伪类、伪元素配合CSS3可以完成非常多有意思的效果，为方便个人开发时候的快速查阅，记录了以下常用到的一些伪类伪元素的简要中文说明；</p>
+<p>简单区分：</p>
+<pre><code>:Pseudo-classes        伪类:DOM在不同状态、不同位置下的特殊效果；
+::Pseudo-elements    伪元素：DOM按匹配规则伪造出的元素；
+</code></pre><h4 id="注意点："><a href="#注意点：" class="headerlink" title="注意点："></a>注意点：</h4><ul>
+<li>伪类添加的内容元素或伪类效果通在DOM的源代码中是看不见的，需要借助开发者工具才能看见;</li>
+<li>使用屏幕阅读器等设备无法访问和读取伪元素生成的内容。因此不应该使用伪元素来添加正文内容等重要信息到页面上展示，应确保主体内容的完整性。</li>
+<li>伪类添加的元素也可以使用CSS样式进行控制,具体查看下面浏览器的兼容性；</li>
+<li>content方式可以添加的图片、unicode、字符串；其中图片不能调整大小，要选择合适的图片;</li>
+<li>伪元素是在DOM内容生成之后添加的，它将被堆积在DOM的父元素的顶上；</li>
+<li>伪元素由双冒号和伪元素名称组成，为了兼容使用单冒号的伪类也有效；</li>
+<li>伪类添加的内容和元素不能使用任何Javascript的事件处理程序；</li>
+<li>js获取伪类的值：win.getComputedStyle(doc.querySelector(‘.element’), ‘:before’).getPropertyValue(‘color’)</li>
+</ul>
+<h4 id="浏览器支持情况"><a href="#浏览器支持情况" class="headerlink" title="浏览器支持情况"></a>浏览器支持情况</h4><ul>
+<li>具体浏览器兼容性可以使用 <a href="http://caniuse.com/#search=CSS3" target="_blank" rel="noopener">Can I Use</a> 或 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS" target="_blank" rel="noopener">MDN CSS Browser Support</a></li>
+</ul>
+<h4 id="常用伪元素、伪类列表"><a href="#常用伪元素、伪类列表" class="headerlink" title="常用伪元素、伪类列表"></a>常用伪元素、伪类列表</h4><pre><code>::after         在元素的内容之后
+::before          在元素的内容之前
+::first-line     元素的第一行
+::first-letter     元素的第一个字母
+::placeholder    占位符，用于input输入框之类的提醒
+::selection     被选取的元素，用于改变网页被选中部分的效果
 
-12var newValue = oldValue  //会抛出错误，因为后者未声明var newValue = window.oldValue  // undefined
-间歇调用和超时调用
-JS 是单线程语言，但它允许...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/02/01</span>
-                </div>
-                <!-- tags  -->
-                
-            </div>
-        </article>
+:active         当元素被点击的时
+:blank          空白的元素
+:checked          被选中的元素
+:default         默认被选中或默认会被提交的元素
+:dir()             匹配特定文字书写方向的元素
+:disabled        处于被禁止操作状态的元素
+:empty             没有任何内容的元素
+:enabled         处于可操作状态的元素
+:first             用于打印文档的第一页
+:first-child     父级元素下的第一个子元素
+:first-of-type     父级元素下的第一个同类子元素
+:focus             当元素成为焦点
+:fullscreen        当元素被HTML5 API调用RequestFullscreen方式全屏时
+:hover             当鼠标移动到链接元素上面时
+:in-range        当元素属性值处于其指定的范围内时    
+:indeterminate    当元素属性值处于不确定状态的
+:invalid        当元素属性值不是指定的type属性时
+:lang()          匹配有正确lang 属性值的元素，如 lang(zh-Hans)
+:last-child        元素的最后一个子元素
+:last-of-type     元素的最后一个同类子元素
+:left            选择打印文档的左侧页
+:link             未被访问的链接元素
+:not()             否定选择器（不匹配条件则生效）
+:nth-child()     元素的一个或多个特定的子元素
+:nth-last-child() 元素的一个或多个特定的子元素，从该元素的最后一个子元素开始算；
+:nth-of-type()     选择指定的元素
+:nth-last-of-type()    选择指定的元素，从元素的最后一个开始计算
+:only-child        元素是它的父元素的唯一子元素
+:only-of-type     元素是它的父级元素的唯一一个相同类型的子元素
+:optional        未指定required属性的表单元素
+:out-of-range    超出规定值范围的元素
+:read-only        元素设置了 &apos;readonly&apos; 属性生效
+:read-write        元素没有 &quot;readonly&quot; 属性生效
+:required        设置了 &quot;required&quot; 属性的元素    
+:right            选择打印文档的左侧页
+:root             文档的根元素
+:scope            作用域的伪类，默认为HTML（案例 :scope #mammma {...}）
+:target         当前活动的元素（匹配页面URI中对应的目标元素）
+:valid             表示有效的元素
+:visited         已被访问过的元素
+ content        在元素之前或之后添加的内容。
+</code></pre><h3 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h3><ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/DOM/Using_fullscreen_mode" target="_blank" rel="noopener">Fullscreen API </a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:scope" target="_blank" rel="noopener">:scope</a></li>
+</ul>
+
+    </article>
+    <!-- 前后页  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2016/09/15/03/" title= 引用类型 >
+                    <div class="nextTitle">引用类型</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2016/06/30/01/" title= Git 简单使用说明 >
+                    <div class="prevTitle">Git 简单使用说明</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
-    <!-- paginator  -->
     
+    <!--PC版-->
+
+    <!--PC版-->
+
+
+    
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -390,6 +506,13 @@ JS 是单线程语言，但它允许...
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper">
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#注意点："><span class="toc-number">1.</span> <span class="toc-text">注意点：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#浏览器支持情况"><span class="toc-number">2.</span> <span class="toc-text">浏览器支持情况</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#常用伪元素、伪类列表"><span class="toc-number">3.</span> <span class="toc-text">常用伪元素、伪类列表</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相关资源"><span class="toc-number"></span> <span class="toc-text">相关资源</span></a>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">

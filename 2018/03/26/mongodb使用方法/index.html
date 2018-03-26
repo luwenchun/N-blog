@@ -9,7 +9,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
-    <title>bigdeal&#39;s Studio</title>
+    <title>mongodb常用操作指令 · bigdeal&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -252,6 +252,8 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
@@ -259,64 +261,185 @@
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
     
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >bigdeal&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">mongodb常用操作指令</a>
+            </div>
+    </div>
+    
     <a class="home-link" href=/>bigdeal's Studio.</a>
 </header>
     <div class="wrapper">
         <div class="site-intro">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-placeholder"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
+            mongodb常用操作指令
+            <!-- 404 -->
+            
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <!-- 文章页标签  -->
+            
+            <script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "2", "bdMiniList": false, "bdPic": "", "bdStyle": "1", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = "/static/api/js/share.js"];</script>
+            <div class="post-intro-meta">
+                <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                <span class="post-intro-time">2018/03/26</span>
+                
+                <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                    <span class="iconfont-archer">&#xe604;</span>
+                    <span id="busuanzi_value_page_pv"></span>
+                </span>
+                
+                <span class="shareWrapper">
+                    <span class="iconfont-archer shareIcon">
+                        &#xe601;
+                    </span>
+                    <span class="bdsharebuttonbox">
+                        <a href="#" class="bds_more shareText" data-cmd="more">Share</a>
+                    </span>
+                </span>
+            </div>
         
     </div>
 </div>
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
 
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2017/02/01/08/" >
-                
-                    <span>BOM</span>
-            </a>
-            <div class="abstract-content">
-                BOM对象window对象
-BOM的核心是window，它表示浏览器的一个实例。window 对象既是通过 js 访问浏览器窗口的一个接口，又是 es 规定的Global 对象。
-全局变量不能通过 delete 操作符删除，但是 window 对象上的属性是可以的。
-直接访问为未声明的变量会报错，但是可以通过 window对象上的属性来查询某个未声明的变量是否存在。
+            <main class="main post-page">
+    <article class="article-entry">
+        <h3 id="1-创建简单mongodb服务器"><a href="#1-创建简单mongodb服务器" class="headerlink" title="1.创建简单mongodb服务器"></a>1.创建简单mongodb服务器</h3><ul>
+<li><p><code>mongod --dbpath E:\MongoDB\db</code></p>
+</li>
+<li><p><code>mongo.exe</code></p>
+</li>
+</ul>
+<h3 id="2-数据库操作-CRUD"><a href="#2-数据库操作-CRUD" class="headerlink" title="2.数据库操作(CRUD)"></a>2.数据库操作(CRUD)</h3><ul>
+<li><p>显示数据库名称：<code>show dbs</code></p>
+</li>
+<li><p>切换数据库：<code>use &lt;dbname&gt;</code></p>
+</li>
+<li><p>删除当前数据库：<code>db.dropDatabase()</code></p>
+</li>
+<li><p>想要新建数据库，直接使用<code>use &lt;dbname&gt;</code>,在需要的时候会自动创建</p>
+</li>
+<li><p>新建表<code>db.&lt;表名&gt;.insert({})</code>;数据以json的格式</p>
+</li>
+<li><p>显示表名 ：<code>show collections</code></p>
+</li>
+</ul>
+<blockquote>
+<p>例子</p>
+</blockquote>
+<pre><code>&gt; use exapmledb
 
-12var newValue = oldValue  //会抛出错误，因为后者未声明var newValue = window.oldValue  // undefined
-间歇调用和超时调用
-JS 是单线程语言，但它允许...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/02/01</span>
-                </div>
-                <!-- tags  -->
-                
-            </div>
-        </article>
+&gt; db.ex_collection1.insert({x:1}) //在表ex_collection1中插入数据{x:1}
+
+&gt; show collections
+
+输出：
+
+ex_collection1
+system.indexes
+</code></pre><h4 id="2-1-查"><a href="#2-1-查" class="headerlink" title="2.1 查"></a>2.1 查</h4><ul>
+<li><p>查询 ：<code>db.&lt;表名&gt;.find()</code> 默认返回所有数据</p>
+<p>  <code>&gt; db.ex_collection1.find()</code> </p>
+</li>
+<li><p>查询表中数据，默认返回所有</p>
+<p>  <code>{ &quot;_id&quot; : ObjectId(&quot;58e9e1c6d6ffabd315a4f74a&quot;), &quot;x&quot; : 1 }</code></p>
+<p>  数据库会自动生成一个<code>_id</code>，也可以自己添加，但不能重复</p>
+</li>
+<li><p>条件查询：db.ex_collection1.find({x:1})</p>
+</li>
+<li><p>循环插入</p>
+<p>  <code>&gt; for(i=2;i&lt;50;i++)db.ex_collection1.insert({x:i})</code></p>
+</li>
+<li><p>计算查询出来的总数</p>
+<p>  <code>&gt; db.ex_collection1.find().count()</code>  </p>
+</li>
+<li><p>增加查询条件,下面表示，过滤前3条，返回两条，并且以x排序</p>
+<p>  <code>db.ex_collection1.find().skip(3).limit(2).sort({x:1})</code></p>
+<h4 id="2-2-更新"><a href="#2-2-更新" class="headerlink" title="2.2 更新"></a>2.2 更新</h4></li>
+<li><p>更新数据，比如将<code>x：1</code>的数据改为<code>x：999</code></p>
+<p>  <code>db.ex_collection1.update({x:1},{x:999})</code> </p>
+</li>
+<li><p>部分更新，比如有数据{x:100, y:100, z:100},想要以z:100为条件，更新里面的y为99；</p>
+<p>  <code>db.ex_collection1.update({z:100},{$set:{y:99}})</code></p>
+</li>
+<li><p>更新一条不存在的数据，如果查找y为100的数据，改为y：999，如果不存在的话就直接写入y：999数据,增加第三个参数true即可。</p>
+<p>  <code>db.ex_collection1.update({y:100},{y:999},true)</code></p>
+</li>
+<li><p>更新多条数据，mongodb默认更新一条数据，比如有三条c为1的数据，使用前面方式更新只会修改第一条。</p>
+<p>  <code>db.immoc_collection.update({c:1},{$set:{c:2}},false,true)</code></p>
+</li>
+</ul>
+<h4 id="2-3-删除"><a href="#2-3-删除" class="headerlink" title="2.3 删除"></a>2.3 删除</h4><ul>
+<li><p>删除数据</p>
+<p>  <code>db.immoc_collection.remove({c:2})</code></p>
+</li>
+<li><p>删除表</p>
+<p>  <code>db.ex_collection1.drop()</code></p>
+</li>
+</ul>
+<h3 id="3-索引"><a href="#3-索引" class="headerlink" title="3. 索引"></a>3. 索引</h3><h4 id="3-1-查询创建索引"><a href="#3-1-查询创建索引" class="headerlink" title="3.1 查询创建索引"></a>3.1 查询创建索引</h4><ul>
+<li><p>查询索引</p>
+<p>  <code>db.ex_collection1.getIndexes()</code></p>
+</li>
+<li><p>创建索引(这里的1代表为正向，-1为负向索引)</p>
+<p>  <code>db.imooc_collection.ensureIndex({x:1})</code></p>
+</li>
+</ul>
+
+    </article>
+    <!-- 前后页  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2017/09/21/BFC/" title= BFC >
+                    <div class="prevTitle">BFC</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
-    <!-- paginator  -->
     
+    <!--PC版-->
+
+    <!--PC版-->
+
+
+    
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -390,6 +513,13 @@ JS 是单线程语言，但它允许...
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper">
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-创建简单mongodb服务器"><span class="toc-number">1.</span> <span class="toc-text">1.创建简单mongodb服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-数据库操作-CRUD"><span class="toc-number">2.</span> <span class="toc-text">2.数据库操作(CRUD)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-查"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-更新"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 更新</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-删除"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 删除</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-索引"><span class="toc-number">3.</span> <span class="toc-text">3. 索引</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-查询创建索引"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 查询创建索引</span></a></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">

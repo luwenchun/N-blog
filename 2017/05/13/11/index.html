@@ -9,7 +9,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
-    <title>bigdeal&#39;s Studio</title>
+    <title>Ajax · bigdeal&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -252,6 +252,8 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
@@ -259,64 +261,147 @@
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
     
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >bigdeal&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Ajax</a>
+            </div>
+    </div>
+    
     <a class="home-link" href=/>bigdeal's Studio.</a>
 </header>
     <div class="wrapper">
         <div class="site-intro">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-placeholder"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
+            Ajax
+            <!-- 404 -->
+            
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <!-- 文章页标签  -->
+            
+            <script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "2", "bdMiniList": false, "bdPic": "", "bdStyle": "1", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = "/static/api/js/share.js"];</script>
+            <div class="post-intro-meta">
+                <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                <span class="post-intro-time">2017/05/13</span>
+                
+                <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                    <span class="iconfont-archer">&#xe604;</span>
+                    <span id="busuanzi_value_page_pv"></span>
+                </span>
+                
+                <span class="shareWrapper">
+                    <span class="iconfont-archer shareIcon">
+                        &#xe601;
+                    </span>
+                    <span class="bdsharebuttonbox">
+                        <a href="#" class="bds_more shareText" data-cmd="more">Share</a>
+                    </span>
+                </span>
+            </div>
         
     </div>
 </div>
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
 
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2017/02/01/08/" >
-                
-                    <span>BOM</span>
-            </a>
-            <div class="abstract-content">
-                BOM对象window对象
-BOM的核心是window，它表示浏览器的一个实例。window 对象既是通过 js 访问浏览器窗口的一个接口，又是 es 规定的Global 对象。
-全局变量不能通过 delete 操作符删除，但是 window 对象上的属性是可以的。
-直接访问为未声明的变量会报错，但是可以通过 window对象上的属性来查询某个未声明的变量是否存在。
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="XMLHttpRequest"><a href="#XMLHttpRequest" class="headerlink" title="XMLHttpRequest"></a>XMLHttpRequest</h2><pre><code>var xhr = new XMLHttpRequest()
+xhr.onreadystatechange = function () {
+    // 这里的函数异步执行，可参考之前 JS 基础中的异步模块
+    if (xhr.readyState == 4) {
+        if (xhr.status == 200) {
+            alert(xhr.responseText)
+        }
+    }
+}
+xhr.open(&quot;GET&quot;, &quot;/api&quot;, false)
+xhr.send(null)
+</code></pre><h2 id="状态码说明"><a href="#状态码说明" class="headerlink" title="状态码说明"></a>状态码说明</h2><p>上述代码中，有两处状态码需要说明。xhr.readyState是浏览器判断请求过程中各个阶段的，xhr.status是 HTTP 协议中规定的不同结果的返回状态说明。</p>
+<p>xhr.readyState的状态码说明：</p>
+<pre><code>0 - (未初始化）还没有调用send()方法
+1 -（载入）已调用send()方法，正在发送请求
+2 -（载入完成）send()方法执行完成，已经接收到全部响应内容
+3 -（交互）正在解析响应内容
+4 -（完成）响应内容解析完成，可以在客户端调用了
+</code></pre><p>xhr.response 的状态码说明：</p>
+<p>xhr.status即 HTTP 状态码，有 2xx 3xx 4xx 5xx 这几种，比较常用的有以下几种：</p>
+<pre><code>200 正常
+3xx
+    301 永久重定向。如http://xxx.com这个 GET 请求（最后没有/），就会被301到http://xxx.com/（最后是/）
+    302 临时重定向。临时的，不是永久的
+    304 资源找到但是不符合请求条件，不会返回任何主体。如发送 GET 请求时，head 中有If-Modified-Since: xxx（要求返回更新时间是xxx时间之后的资源），如果此时服务器 端资源未更新，则会返回304，即不符合要求
+404 找不到资源
+5xx 服务器端出错了
+</code></pre><h2 id="Fetch-API"><a href="#Fetch-API" class="headerlink" title="Fetch API"></a>Fetch API</h2><p>目前已经有一个获取 HTTP 请求更加方便的 API：Fetch，通过Fetch提供的fetch()这个全局函数方法可以很简单地发起异步请求，并且支持Promise的回调。但是 Fetch API 是比较新的 API，具体使用的时候还需要查查 <a href="https://caniuse.com/" target="_blank" rel="noopener">caniuse</a>，看下其浏览器兼容情况。</p>
+<pre><code>fetch(&apos;some/api/data.json&apos;, {
+    method:&apos;POST&apos;, //请求类型 GET、POST
+    headers:{}, // 请求的头信息，形式为 Headers 对象或 ByteString
+    body:{}, //请求发送的数据 blob、BufferSource、FormData、URLSearchParams（get 或head 方法中不能包含 body）
+    mode:&apos;&apos;, //请求的模式，是否跨域等，如 cors、 no-cors 或 same-origin
+    credentials:&apos;&apos;, //cookie 的跨域策略，如 omit、same-origin 或 include
+    cache:&apos;&apos;, //请求的 cache 模式: default、no-store、reload、no-cache、 force-cache 或 only-if-cached
+})
+.then(function(response) { ... });
+</code></pre><p>Fetch 支持headers定义，通过headers自定义可以方便地实现多种请求方法（ PUT、GET、POST 等）、请求头（包括跨域）和cache策略等；除此之外还支持 response（返回数据）多种类型，比如支持二进制文件、字符串和formData等。</p>
 
-12var newValue = oldValue  //会抛出错误，因为后者未声明var newValue = window.oldValue  // undefined
-间歇调用和超时调用
-JS 是单线程语言，但它允许...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/02/01</span>
-                </div>
-                <!-- tags  -->
-                
-            </div>
-        </article>
+    </article>
+    <!-- 前后页  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2017/06/20/12/" title= Linux 基础命令 >
+                    <div class="nextTitle">Linux 基础命令</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2017/04/05/10/" title= 前端自动化构建环境的搭建 >
+                    <div class="prevTitle">前端自动化构建环境的搭建</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
-    <!-- paginator  -->
     
+    <!--PC版-->
+
+    <!--PC版-->
+
+
+    
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -390,6 +475,13 @@ JS 是单线程语言，但它允许...
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper">
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#XMLHttpRequest"><span class="toc-number">1.</span> <span class="toc-text">XMLHttpRequest</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#状态码说明"><span class="toc-number">2.</span> <span class="toc-text">状态码说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Fetch-API"><span class="toc-number">3.</span> <span class="toc-text">Fetch API</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">

@@ -9,7 +9,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
-    <title>bigdeal&#39;s Studio</title>
+    <title>JSON格式详解 · bigdeal&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -252,6 +252,8 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
@@ -259,64 +261,160 @@
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
     
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >bigdeal&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">JSON格式详解</a>
+            </div>
+    </div>
+    
     <a class="home-link" href=/>bigdeal's Studio.</a>
 </header>
     <div class="wrapper">
         <div class="site-intro">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-placeholder"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
+            JSON格式详解
+            <!-- 404 -->
+            
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <!-- 文章页标签  -->
+            
+            <script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "2", "bdMiniList": false, "bdPic": "", "bdStyle": "1", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = "/static/api/js/share.js"];</script>
+            <div class="post-intro-meta">
+                <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                <span class="post-intro-time">2016/11/20</span>
+                
+                <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                    <span class="iconfont-archer">&#xe604;</span>
+                    <span id="busuanzi_value_page_pv"></span>
+                </span>
+                
+                <span class="shareWrapper">
+                    <span class="iconfont-archer shareIcon">
+                        &#xe601;
+                    </span>
+                    <span class="bdsharebuttonbox">
+                        <a href="#" class="bds_more shareText" data-cmd="more">Share</a>
+                    </span>
+                </span>
+            </div>
         
     </div>
 </div>
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
 
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2017/02/01/08/" >
-                
-                    <span>BOM</span>
-            </a>
-            <div class="abstract-content">
-                BOM对象window对象
-BOM的核心是window，它表示浏览器的一个实例。window 对象既是通过 js 访问浏览器窗口的一个接口，又是 es 规定的Global 对象。
-全局变量不能通过 delete 操作符删除，但是 window 对象上的属性是可以的。
-直接访问为未声明的变量会报错，但是可以通过 window对象上的属性来查询某个未声明的变量是否存在。
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>JSON是一种数据格式，又是 JS 的一个严格的子集，但并不从属于JavaScript.</p>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><ol>
+<li>简单值：字符串、数值、布尔值、null.<strong>不支持 js 中的特殊值 undefined。</strong></li>
+<li>对象：一种复杂数据类型，无序键值对儿。其中的值可以为简单值，也可以是复杂数据类型值。</li>
+<li>数组，一种复杂数据类型，有序的值的列表，可以通过数值索引访问，数组的值也可以是任意类型。</li>
+</ol>
+<h3 id="简单值"><a href="#简单值" class="headerlink" title="简单值"></a>简单值</h3><ul>
+<li>js 字符串与 JSON 字符串最大的不同，在于 JSON 字符串必须为双引号，单引号可能导致语法错误。</li>
+<li>布尔值和 null 也是有效的 JSON 格式，但通常是会用复杂的数据结构表示 JSON 对象。</li>
+</ul>
+<h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><ul>
+<li>js 对象字面量和 JSON 格式大体相同，但 JSON 对象有两点不同，首先没有变量声明，也没有末尾的分号，另外值得注意的是，<strong>属性必须加双引号</strong>！忘了给属性加双引号，或者写成单引号都是常见错误。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="string">"name"</span>: <span class="string">"Nicholas"</span>,</span><br><span class="line">	<span class="string">"age"</span>: <span class="number">29</span>,</span><br><span class="line">	<span class="string">"school"</span>: &#123;</span><br><span class="line">		<span class="string">"name"</span>: <span class="string">"BUPT"</span>,</span><br><span class="line">		<span class="string">"location"</span>: <span class="string">"beijing"</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><ul>
+<li>JSON 数组也没有变量和分号，对象和数组通常是 JSON 数据结构的最外层形式。但并不强制。</li>
+</ul>
+<h2 id="解析和序列化"><a href="#解析和序列化" class="headerlink" title="解析和序列化"></a>解析和序列化</h2><p>JSON之所以流行，主要的是可以把 JSON 数据结构解析为有用的 js 对象。简单清晰明了。</p>
+<h3 id="JSON-stringify"><a href="#JSON-stringify" class="headerlink" title="JSON.stringify()"></a>JSON.stringify()</h3><h4 id="JSON-stringify-方法序列化的内部顺序："><a href="#JSON-stringify-方法序列化的内部顺序：" class="headerlink" title="JSON.stringify()方法序列化的内部顺序："></a>JSON.stringify()方法序列化的内部顺序：</h4><ol>
+<li>如果存在 toJSON()方法，首先调用该方法，否则返回对象本身。</li>
+<li>如果提供第二个参数，应用这个函数过滤器，第一个参数值为第一步传入的值。</li>
+<li>对第二步返回的每个值进行相应的序列化。</li>
+<li>如果提供了第三个参数，执行相应的序列化。</li>
+</ol>
+<ul>
+<li>JSON.stringify()用于把 js 对象序列化为 JSON 字符串。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> book = &#123;</span><br><span class="line">	title: <span class="string">'professional js'</span>,</span><br><span class="line">	authors: [</span><br><span class="line">		<span class="string">'Nicholas'</span></span><br><span class="line">	],</span><br><span class="line">	edition: <span class="number">3</span>,</span><br><span class="line">	year: <span class="number">2001</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> jsonText = <span class="built_in">JSON</span>.stringify(book)  <span class="comment">//jsonText 即为转换好的字符串</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//&#123;"title":"professional js","authors":["Nicholas"],"edition":3,"year":2001&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(jsonText)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>JSON.stringify()其实还可以接受另外两个参数，用于以不同的方式进行序列化。</li>
+<li>第一个参数是个过滤器，可以是数组也可以是函数，第二个参数表示是否保留缩进。这两个参数可以单独或配合使用。</li>
+<li>如果第一个传入的参数是数组，那么返回的结果只会包含数组列出的属性。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//得到的JSON 字符串只有 title 和 edition 两个属性</span></span><br><span class="line"><span class="keyword">var</span> jsonText = <span class="built_in">JSON</span>.stringify(book, [<span class="string">"title"</span>, <span class="string">"edition"</span>])</span><br></pre></td></tr></table></figure>
+<ul>
+<li>如果第一个传入参数是函数，函数接受(key, value)两个参数，根据属性名分别处理属性，属性名只能是字符串。如果返回值是 undefined，那么相应的属性就不会出现在返回的 JSON 字符串中了。相当于删除该属性。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> jsonText = <span class="built_in">JSON</span>.stringify(book, <span class="function"><span class="keyword">function</span>(<span class="params">key, value</span>)</span>&#123;  <span class="comment">//传入一个函数处理 key value</span></span><br><span class="line">	<span class="keyword">switch</span>(key)&#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="string">"authors"</span>:				</span><br><span class="line">			<span class="keyword">return</span> value.join(<span class="string">','</span>)	<span class="comment">//没有 break 注意</span></span><br><span class="line">			</span><br><span class="line">		<span class="keyword">case</span> <span class="string">'year'</span>:</span><br><span class="line">			<span class="keyword">return</span> <span class="number">5000</span></span><br><span class="line">			</span><br><span class="line">		<span class="keyword">case</span> <span class="string">'edition'</span>:</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">undefined</span>  <span class="comment">//相当于删掉这个属性</span></span><br><span class="line">			</span><br><span class="line">		<span class="keyword">default</span>:</span><br><span class="line">		<span class="keyword">return</span> value</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>第三个参数用于处理缩进和空白符。如果是数值，那么代表缩进的空格数。如果是字符串，代表空白符。</li>
+<li>无论是数值还是字符串，都只会保留10位，超出的会被忽略，结果中只会出现10个空格或前十个字符。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> jsonText = <span class="built_in">JSON</span>.stringify(book, <span class="literal">null</span>, <span class="number">4</span>) <span class="comment">//缩进4个字符</span></span><br><span class="line"><span class="keyword">var</span> jsonText = <span class="built_in">JSON</span>.stringify(book, <span class="literal">null</span>, <span class="string">'----'</span>) <span class="comment">//缩进4个制表符</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>toJSON()方法。任何对象都可以添加 toJSON 方法，通过设置返回值使 JSON.stringify()生效。如果返回值为 undefined，如果是顶级对象，结果是 undefined，如果是包含在其他对象中，它的值为 null。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> book = &#123;</span><br><span class="line">   title: <span class="string">'professional js'</span>,</span><br><span class="line">   authors: [</span><br><span class="line">     <span class="string">'Nicholas'</span></span><br><span class="line">   ],</span><br><span class="line">   edition: <span class="number">3</span>,</span><br><span class="line">   year: <span class="number">2001</span>,</span><br><span class="line">   toJSON: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;  <span class="comment">//自定义 toJSON()方法</span></span><br><span class="line">     <span class="keyword">return</span> <span class="keyword">this</span>.title</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="keyword">var</span> jsonText = <span class="built_in">JSON</span>.stringify(book)</span><br><span class="line"> <span class="built_in">console</span>.log(jsonText)  <span class="comment">// 返回的JSON 对象为"professional js"</span></span><br></pre></td></tr></table></figure>
+<h3 id="JSON-parse"><a href="#JSON-parse" class="headerlink" title="JSON.parse()"></a>JSON.parse()</h3><ul>
+<li>JSON.parse()用于把 JSON 字符串解析为原生 js 值。</li>
+<li>和 JSON.stringify()方法类似，parse()也可以接受第二个参数，是一个函数，将在每一个键值对上调用。参数也是 key、value 的形式。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> bookCopy = <span class="built_in">JSON</span>.parse(jsonText, <span class="function"><span class="keyword">function</span>(<span class="params">key, value</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (key === <span class="string">"releaseDate"</span>) &#123;	<span class="comment">//通过判断 key，来进行相应 value 的操作</span></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Date</span>(value)</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> value</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+    </article>
+    <!-- 前后页  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2016/12/12/06/" title= JS事件 >
+                    <div class="nextTitle">JS事件</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2016/10/02/04/" title= JavaScript创建对象和实现继承 >
+                    <div class="prevTitle">JavaScript创建对象和实现继承</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
 
-12var newValue = oldValue  //会抛出错误，因为后者未声明var newValue = window.oldValue  // undefined
-间歇调用和超时调用
-JS 是单线程语言，但它允许...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/02/01</span>
-                </div>
-                <!-- tags  -->
-                
-            </div>
-        </article>
+<!-- City版安装代码已完成 -->
     
-    <!-- paginator  -->
     
+    <!--PC版-->
+
+    <!--PC版-->
+
+
+    
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -390,6 +488,13 @@ JS 是单线程语言，但它允许...
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper">
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#语法"><span class="toc-number">1.</span> <span class="toc-text">语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#简单值"><span class="toc-number">1.1.</span> <span class="toc-text">简单值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对象"><span class="toc-number">1.2.</span> <span class="toc-text">对象</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数组"><span class="toc-number">2.</span> <span class="toc-text">数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解析和序列化"><span class="toc-number">3.</span> <span class="toc-text">解析和序列化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JSON-stringify"><span class="toc-number">3.1.</span> <span class="toc-text">JSON.stringify()</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#JSON-stringify-方法序列化的内部顺序："><span class="toc-number">3.1.1.</span> <span class="toc-text">JSON.stringify()方法序列化的内部顺序：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSON-parse"><span class="toc-number">3.2.</span> <span class="toc-text">JSON.parse()</span></a></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
